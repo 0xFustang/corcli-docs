@@ -36,3 +36,6 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true 
+
+repo_url: https://github.com/0xFustang/corcli
+repo_name: 0xFustang/corcli

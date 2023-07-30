@@ -163,6 +163,6 @@ You can set a bash or zsh alias to call `corcli` with your regular configuration
 === "Docker"
 
     ```sh
-    alias corcli='docker run --rm '
+    alias corcli='docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ corcli_docker_url corcli -cf config/corcli.toml'
     ```
 

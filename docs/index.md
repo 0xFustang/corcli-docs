@@ -11,9 +11,9 @@ hide:
 
 ---
 
-**Documentation:** https://github.com
+**Documentation:** https://0xFustang.github.io/corcli-docs
 
-**Source Code:** https://github.com
+**Source Code:** https://github.com/0xFustang/corcli
 
 ---
 
