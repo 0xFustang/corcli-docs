@@ -1,3 +1,3 @@
 # corcli-docs
 
-GitHub repo for corcli's documentation.
+GitHub repo for corcli's documentation
