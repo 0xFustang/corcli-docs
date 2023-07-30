@@ -37,13 +37,13 @@ A [docker image] is available from the repository and comes with all dependencie
 === "Latest"
 
     ```sh
-    docker 
+    docker pull ghcr.io/0xfustang/corcli:1.0.0 
     ```
 
 === "1.x"
 
     ```sh
-    docker 
+    docker pull ghcr.io/0xfustang/corcli:1.x
     ```
 
 [docker image]: https://pypi.org/project/corcli/
@@ -51,7 +51,7 @@ A [docker image] is available from the repository and comes with all dependencie
 ## Configuration
 ---
 
-`corcli` can use a configuration file containing information about the Cortex instances and aliases.
+`corcli` can use a configuration file containing information about the Cortex instances and aliases. Feel free to use the example below or the one from the [code repository]. Just copy the `.example` file into `myconfigfile.toml` to get started.
 
 ```toml
 title = "corcli configuration file"
@@ -81,11 +81,17 @@ url = "https://cortex-qa.local/"
 verify_cert = false
 ```
 
+???+ note
+
+    `corcli` uses TOML configuration file.
+
 ???+ warning
 
     Do not change `cortex-instance.default`, `corcli` won't be able to read the default instance config
 
 Now that you have a configuration file, use the option `-cf` or `--config-file`.
+
+[code repository]: https://github.com/0xFustang/corcli/blob/main/ccli_config.toml.example
 
 ### API key
 
@@ -163,6 +169,6 @@ You can set a bash or zsh alias to call `corcli` with your regular configuration
 === "Docker"
 
     ```sh
-    alias corcli='docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ corcli_docker_url corcli -cf config/corcli.toml'
+    alias corcli='docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.0 corcli -cf config/corcli.toml'
     ```
 
