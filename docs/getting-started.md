@@ -141,7 +141,7 @@ Now that you have a configuration file, use the option `-cf` or `--config-file`.
 
 === "Using argument"
 
-    ```powershell
+    ```sh
     corcli -cf ~/corcli_config/corcli.toml -k API_KEY -d google.com
     ```
 
@@ -161,9 +161,21 @@ To submit a job to Cortex use the following:
     corcli -u https://cortex.afterlife.local -d google.com
     ```
 
+=== "Docker with a configuration file"
+
+    ```sh
+    docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.1 corcli -cf config/corcli.toml -d google.com
+    ```
+
+=== "Docker without a configuration file"
+
+    ```sh
+    docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.1 corcli -c https://cortex.local -d google.com
+    ```
+
 You will find more use cases in the [Usage] page.
 
-[Usage]: /usage
+[Usage]: /corcli-docs/usage/
 
 ## Tips
 ---
@@ -204,6 +216,6 @@ You can set a bash or zsh alias to call `corcli` with your regular configuration
 === "Docker"
 
     ```sh
-    alias corcli='docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.0 corcli -cf config/corcli.toml'
+    alias corcli='docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.1 corcli -cf config/corcli.toml'
     ```
 
