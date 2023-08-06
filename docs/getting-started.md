@@ -10,8 +10,42 @@ hide:
 
 ### with pip <small>recommended</small>
 
-`corcli` is published as a [Python package] and can be installed with `pip`, ideally by using a [virtual environment]. Open up a terminal and install corcli with:
+`corcli` is published as a [Python package] and can be installed with `pip`, ideally by using a [virtual environment]. `corcli` uses [python-magic] and require the installation of libmagic.
 
+1. Install libmagic:
+
+=== "Debian/Ubuntu"
+
+    ```sh
+    sudo apt-get install libmagic1
+    ```
+
+=== "RHEL/CentOS/RockyLinux"
+
+    ```sh
+    sudo yum install libmagic
+    ```
+
+=== "OSX with brew"
+
+    ```sh
+    brew install libmagic
+    ```
+
+=== "OSX with macports"
+
+    ```sh
+    port install file
+    ```
+
+=== "Windows"
+
+    ```sh
+    pip install python-magic-bin
+    ```
+
+
+2. Open up a terminal and install corcli with:
 
 === "Latest"
 
@@ -27,6 +61,7 @@ hide:
 
 It will automatically install all dependencies: inquirer, cortex4py, colorama and toml.
 
+[python-magic]: https://github.com/ahupp/python-magic
 [Python package]: https://pypi.org/project/corcli/
 [virtual environment]: https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment
 
@@ -37,7 +72,7 @@ A [docker image] is available from the repository and comes with all dependencie
 === "Latest"
 
     ```sh
-    docker pull ghcr.io/0xfustang/corcli:1.0.0 
+    docker pull ghcr.io/0xfustang/corcli:1.0.1
     ```
 
 === "1.x"
