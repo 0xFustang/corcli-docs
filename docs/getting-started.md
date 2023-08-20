@@ -88,8 +88,10 @@ A [docker image] is available from the repository and comes with all dependencie
 
 `corcli` can use a configuration file containing information about the Cortex instances and aliases. Feel free to use the example below or the one from the [code repository]. Just copy the `.example` file into `myconfigfile.toml` to get started.
 
+You can name a group of analyzers to call. In the configuration file below, I set the group `malware` to call three analysers that I regularly use.
+
 ```toml
-title = "corcli configuration file"
+title = "cortex-cli configuration file"
 
 [cortex-instance]
 
@@ -98,6 +100,7 @@ url = "https://cortex.local"
 verify_cert = true
 
 hashlookup = 'CIRCLHashlookup_1_1'
+urlhaus = 'URLhaus_2_0'
 malbazaar = 'MalwareBazaar_1_0'
 eml = 'EmlParser_2_1'
 vt = 'VirusTotal_GetReport_3_1'
@@ -105,15 +108,17 @@ doh = 'GoogleDNS_resolve_1_0_0'
 misp = 'MISP_2_1'
 octi = 'OpenCTI_SearchObservables_2_0'
 
+malware = ['CIRCLHashlookup_1_1', 'MalwareBazaar_1_0', 'VirusTotal_GetReport_3_1']
+
 [cortex-instance.dev]
 url = "https://cortex-dev.local"
-verify_cert = true
+verify_cert = false
 
 octi = 'OpenCTI_SearchObservables_2_0'
 
-[cortex-instance.qa]
-url = "https://cortex-qa.local/"
-verify_cert = false
+[cortex-instance.ext]
+url = "https://cortex-ext.local/"
+verify_cert = true
 ```
 
 ???+ note
