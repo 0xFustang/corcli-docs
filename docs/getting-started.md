@@ -164,13 +164,13 @@ To submit a job to Cortex use the following:
 === "Docker with a configuration file"
 
     ```sh
-    docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.1 corcli -cf config/corcli.toml -d google.com
+    docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.1.0 corcli -cf config/corcli.toml -d google.com
     ```
 
 === "Docker without a configuration file"
 
     ```sh
-    docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.1 corcli -c https://cortex.local -d google.com
+    docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.1.0 corcli -c https://cortex.local -d google.com
     ```
 
 You will find more use cases in the [Usage] page.
