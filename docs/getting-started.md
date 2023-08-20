@@ -72,7 +72,7 @@ A [docker image] is available from the repository and comes with all dependencie
 === "Latest"
 
     ```sh
-    docker pull ghcr.io/0xfustang/corcli:1.0.1
+    docker pull ghcr.io/0xfustang/corcli:1.1.0
     ```
 
 === "1.x"
@@ -216,6 +216,6 @@ You can set a bash or zsh alias to call `corcli` with your regular configuration
 === "Docker"
 
     ```sh
-    alias corcli='docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.0.1 corcli -cf config/corcli.toml'
+    alias corcli='docker run -ti -e CORTEX_CLI_API=$CORTEX_CLI_API --rm -v $CONFIG_PATH:/app/config/ -v $(pwd):/app/ ghcr.io/0xfustang/corcli:1.1.0 corcli -cf config/corcli.toml'
     ```
 
